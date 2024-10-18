@@ -10,4 +10,9 @@ export default defineNuxtConfig({
       API_BASE_URL: process.env.API_URL || 'http://localhost/wordpress/wp-json',
     },
   },
-})
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
+  },
+  })
+
+

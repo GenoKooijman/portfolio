@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import { useRuntimeConfig } from '#app'
 
 interface Post {
@@ -27,7 +27,15 @@ onMounted(async () => {
 
     const data = await response.json()
     posts.value = data
+
+ 
+    await nextTick()
+
     
+    const namePhotoElement = document.getElementById('namePhoto')
+    if (namePhotoElement) {
+      namePhotoElement.classList.add('text-red-500', 'font-bold', 'text-xl') 
+    }
   } catch (error) {
     console.error('Error fetching data:', error)
   }
@@ -36,13 +44,12 @@ onMounted(async () => {
 
 <template>
   <section class="min-h-screen">
-    <h1></h1>
+    <h1>ABOUT</h1>
     <ul>
       <li class="mb-8" v-for="post in posts" :key="post.id">
-        <h1 class="text-3xl">{{ post.title.rendered }}</h1>
-        <div class="text-2xl" v-html="post.content.rendered"></div>
+        <h1 class="">{{ post.title.rendered }}</h1>
+        <div v-html="post.content.rendered"></div>
       </li>
     </ul>
   </section>  
 </template>
-
