@@ -16,7 +16,7 @@ const posts = ref<Post[]>([])
 
 onMounted(async () => {
   const config = useRuntimeConfig()
-  const apiUrl = `${config.public.API_BASE_URL}/wp/v2/pages`
+  const apiUrl = `${config.public.API_BASE_URL}/wp/v2/pages?slug=home-page`
 
   try {
     const response = await fetch(apiUrl)
