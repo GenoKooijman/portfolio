@@ -25,13 +25,13 @@
         </button>
       </div>
       <div id="mobileMenu" :class="{'hidden': !isMenuOpen, 'flex': isMenuOpen}" class="md:hidden flex-col space-y-4 p-4 transition-transform duration-300 transform">
-        <NuxtLink to="/" class="text-xl text-gray-800 hover:text-gray-900 transform transition duration-500">
+        <NuxtLink to="/" class="text-xl text-white hover:text-gray-900 transform transition duration-500">
           Home
         </NuxtLink>
-        <NuxtLink to="/about" class="text-xl text-gray-800 hover:text-gray-900 transform transition duration-500">
+        <NuxtLink to="/about" class="text-xl text-white hover:text-gray-900 transform transition duration-500">
           About
         </NuxtLink>
-        <NuxtLink to="/contact" class="text-xl text-gray-800 hover:text-gray-900 transform transition duration-500">
+        <NuxtLink to="/contact" class="text-xl text-white hover:text-gray-900 transform transition duration-500">
           Contact
         </NuxtLink>
       </div>
