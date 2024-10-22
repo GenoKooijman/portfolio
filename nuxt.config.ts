@@ -21,6 +21,7 @@ export default defineNuxtConfig({
   },
   tailwindcss: {
     config: {
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {

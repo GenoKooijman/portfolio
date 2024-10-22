@@ -3,10 +3,15 @@
     <NuxtRouteAnnouncer />
     
   </div>
+  <DarkModeToggle />
   <AppHeader />
   <NuxtPage />
   <AppFooter />
 </template>
+
+<script setup>
+import DarkModeToggle from '~/components/DarkModeToggle.vue';
+</script>
 
 <style>
 .page-enter-active,

@@ -2,7 +2,6 @@
 import { ref, onMounted } from 'vue'
 import { useRuntimeConfig } from '#app'
 
-// Define the interface for a post
 interface Post {
   id: number;
   title: {
@@ -11,13 +10,16 @@ interface Post {
   content: {
     rendered: string;
   };
+  
   acf?: {
     pfp?: string; 
+    about?: string;
   };
 }
 
 const posts = ref<Post[]>([]) 
 const pfpImage = ref<string | null>(null) 
+const customFieldAbout = ref<string | null>(null) 
 
 onMounted(async () => {
   const config = useRuntimeConfig()
@@ -35,6 +37,10 @@ onMounted(async () => {
     console.log('API Data:', data) 
     posts.value = data
 
+    customFieldAbout.value = data[0].acf.about;
+
+    console.log(data);
+
   
     pfpImage.value = 'http://localhost/wordpress/wp-content/uploads/2024/10/geno.jpg'
     console.log('Set Image URL:', pfpImage.value) 
@@ -45,23 +51,35 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section id="section1" class="min-h-screen">
+  <section id="section1" class="min-h-screen pt-24 transition-colors duration-300 bg-zinc-800 dark:bg-white text-white">
     <ul>
       <li v-for="post in posts" :key="post.id" class="mb-8">
-        <div class="flex flex-col md:grid md:grid-cols-2 md:grid-rows-2 mt-6">
-          <h1 class="text-4xl ml-12 font-semibold  col-start-1 row-start-1">{{ post.title.rendered }}</h1>
-          <div class="text-lg font-chakra ml-14 col-start-1 row-start-1 pt-14 mr-6 " v-html="post.content.rendered"></div>
-          <div v-if="pfpImage">
-        <img :src="pfpImage" alt="pfp" class="col-start-2 rounded-lg drop-shadow-2xl mt-8 md:mt-0 ml-12 md:ml-48 h-[350px] md:h-[500px]" />
-      </div>
+        <div class="flex flex-col md:grid md:grid-cols-2 mt-6">
+          <div class="col-start-1">
+            <h1 class="text-2xl md:text-9xl text-white dark:text-black ml-12 font-bold font-arvo">{{ post.title.rendered }}</h1>
+            <div class="text-2xl md:text-9xl font-bold text-white dark:text-black font-chakra ml-24 pt-8" v-html="post.content.rendered"></div>
+          </div>
+          <div v-if="pfpImage" class="col-start-2 flex items-start ml-12 md:ml-48">
+            <img :src="pfpImage" alt="pfp" class="rounded-lg drop-shadow-2xl h-[350px] md:h-[500px]" />
+          </div>
         </div>
       </li>
     </ul>
-    
   </section>
 
-  <section id="section2">
-   
-  </section>  
+
+  <section id="section2" class="min-h-screen pt-24 pb-14 scroll-mt-28 transition-colors duration-300 bg-zinc-800 dark:bg-white text-white">
+  <div class="grid gird-rows-3 ml-14 md:ml-36">
+    <div class="text-xl md:text-7xl font-semibold text-white dark:text-black tracking-tighter font-arvo">HELLO I AM GENO</div>
+    <div class="row-start-2 text-lg md:text-xl font-semibold text-white dark:text-black font-chakra pl-[38%]">Kooijman</div>
+    <div class="pl-1 md:pl-6 text-lg md:text-3xl text-white dark:text-black font-chakra w-[100%] md:w-[40%] pt-6" >{{ customFieldAbout }}</div>
+  </div>
+  </section>
 </template>
+
+<style scoped>
+.scroll-mt-28 {
+  scroll-margin-top: 7rem; 
+}
+</style>
 
