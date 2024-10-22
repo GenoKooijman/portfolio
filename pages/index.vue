@@ -45,12 +45,12 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="min-h-screen">
+  <section id="section1" class="min-h-screen">
     <ul>
       <li v-for="post in posts" :key="post.id" class="mb-8">
         <div class="flex flex-col md:grid md:grid-cols-2 md:grid-rows-2 mt-6">
-          <h1 class="text-4xl ml-12 font-bold col-start-1 row-start-1">{{ post.title.rendered }}</h1>
-          <div class="text-lg ml-14 col-start-1 row-start-1 pt-14 mr-6 " v-html="post.content.rendered"></div>
+          <h1 class="text-4xl ml-12 font-semibold  col-start-1 row-start-1">{{ post.title.rendered }}</h1>
+          <div class="text-lg font-chakra ml-14 col-start-1 row-start-1 pt-14 mr-6 " v-html="post.content.rendered"></div>
           <div v-if="pfpImage">
         <img :src="pfpImage" alt="pfp" class="col-start-2 rounded-lg drop-shadow-2xl mt-8 md:mt-0 ml-12 md:ml-48 h-[350px] md:h-[500px]" />
       </div>
@@ -58,6 +58,10 @@ onMounted(async () => {
       </li>
     </ul>
     
+  </section>
+
+  <section id="section2">
+   
   </section>  
 </template>
 
