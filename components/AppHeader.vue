@@ -59,7 +59,7 @@ onMounted(() => {
 
       <button
         @click="toggleDarkMode"
-        class=" hidden md:block p-4 w-12 h-12 rounded-full bg-gradient-to-r from-white to-black dark:from-black dark:to-white transition-all duration-500 border-2 border-white dark:border-black shadow-lg"
+        class=" hidden md:block p-4 w-12 h-12 rounded-full   bg-white dark:bg-black transition-all duration-500 border-2 border-zinc-500 dark:border-zinc-400 shadow-lg"
       >
       </button>
 

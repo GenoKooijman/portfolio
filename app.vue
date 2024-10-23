@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import DarkModeToggle from '~/components/DarkModeToggle.vue';
+import DarkModeToggle from '~/components/darkModeToggle.vue';
 </script>
 
 <style>
