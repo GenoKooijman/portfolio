@@ -13,6 +13,7 @@
     "@nuxt/http": "^0.6.4",
     "@nuxt/image": "^1.8.1",
     "@nuxtjs/dotenv": "^1.4.2",
+    "gsap": "^3.12.5",
     "nuxt": "^3.13.0",
     "vue": "latest",
     "vue-router": "latest"
