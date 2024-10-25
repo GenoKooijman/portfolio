@@ -4,7 +4,7 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 const isDarkMode = ref(false);
 const isMenuOpen = ref(false);
 
-// Toggle dark mode
+
 const toggleDarkMode = () => {
   isDarkMode.value = !isDarkMode.value;
   if (isDarkMode.value) {
@@ -14,19 +14,19 @@ const toggleDarkMode = () => {
   }
 };
 
-// Toggle the burger menu
+
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
   document.body.classList.toggle('overflow-hidden', isMenuOpen.value);
 };
 
-// Close the burger menu
+
 const closeMenu = () => {
   isMenuOpen.value = false;
   document.body.classList.remove('overflow-hidden');
 };
 
-// Close the menu when clicking outside of it
+
 const handleOutsideClick = (event) => {
   const menu = document.getElementById("burger-menu");
   const button = document.getElementById("burger-button");
@@ -49,10 +49,26 @@ onBeforeUnmount(() => {
 <template>
   <header class="sticky top-0 z-50 w-full bg-zinc-800 dark:bg-white transition-colors duration-300">
     <div class="flex justify-between items-center p-4">
-      <NuxtLink to="/#section1" class="grid grid-rows-2 text-xl items-center">
-        <div class="text-2xl text-white dark:text-black font-arvo">Geno</div>
-        <div class="row-start-2 text-2xl text-white dark:text-black font-arvo pl-4">Kooijman</div>
-      </NuxtLink>
+      <div class="relative group">
+        <NuxtLink to="/#section1" class="grid grid-rows-2 text-xl items-center">
+          <div class="text-2xl text-white dark:text-black font-arvo">Geno</div>
+          <div class="row-start-2 text-2xl text-white dark:text-black font-arvo pl-4">Kooijman</div>
+        </NuxtLink>
+        <div class="absolute left-0 mt-2 w-40 bg-zinc-800 dark:bg-white rounded-b-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <ul class="py-2">
+            <li>
+              <NuxtLink to="https://github.com/your-github" class="flex items-center px-4 py-2 text-white dark:text-black hover:bg-gray-700 dark:hover:bg-gray-200 rounded-b-lg">
+                <Icon name="pixelarticons:github" class="bg-white pr-2"/> GitHub
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="https://linkedin.com/in/your-linkedin" class="flex items-center px-4 py-2 text-white dark:text-black hover:bg-gray-700 dark:hover:bg-gray-200 rounded-b-lg">
+               Linked <Icon name="line-md:linkedin" class="bg-white pr-2"/>
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <div class="hidden relative md:flex space-x-8">
         <NuxtLink to="/#section1" class="text-xl text-white dark:text-black font-chakra m-6 pr-24 group relative w-max hover:text-slate-300 transition-all duration-500">
