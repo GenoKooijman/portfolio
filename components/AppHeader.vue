@@ -58,12 +58,12 @@ onBeforeUnmount(() => {
           <ul class="py-2">
             <li>
               <NuxtLink to="https://github.com/your-github" class="flex items-center px-4 py-2 text-white dark:text-black hover:bg-gray-700 dark:hover:bg-gray-200 rounded-b-lg">
-                <Icon name="pixelarticons:github" class="bg-white pr-2"/> GitHub
+                <Icon name="pixelarticons:github" class="bg-white dark:bg-black pr-2"/> GitHub
               </NuxtLink>
             </li>
             <li>
               <NuxtLink to="https://linkedin.com/in/your-linkedin" class="flex items-center px-4 py-2 text-white dark:text-black hover:bg-gray-700 dark:hover:bg-gray-200 rounded-b-lg">
-               Linked <Icon name="line-md:linkedin" class="bg-white pr-2"/>
+               Linked <Icon name="line-md:linkedin" class="bg-white dark:bg-black pr-2"/>
               </NuxtLink>
             </li>
           </ul>

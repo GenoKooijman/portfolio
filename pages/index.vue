@@ -172,121 +172,191 @@ onMounted(async () => {
         </div>
       </div>
     </section>
+    </div>
     <!-- projects -->
     <div id="page" class="site">
-      <main id="content" class="site-content w-full" role="main">
-        <section id="panels">
-          <div id="panels-container" class="flex w-full overflow-hidden">
-            <section
-              id="section3"
-              class="panel flex-shrink-0 flex-grow-0 w-screen min-h-screen pt-24 pb-14 transition-colors duration-300 bg-zinc-800 dark:bg-white text-white"
+    <main id="content" class="site-content w-full" role="main">
+      <section id="panels">
+        <div id="panels-container" class="flex w-full overflow-hidden">
+          <section
+            id="section3"
+            class="panel flex-shrink-0 flex-grow-0 w-screen min-h-screen pt-24 pb-14 transition-colors duration-300 bg-zinc-800 dark:bg-white text-white dark:text-black"
+          >
+            <div
+              v-if="firstProject"
+              class="flex justify-center md:flex md:flex-row md:justify-start items-start pt-12 w-full"
             >
-              <div
-                v-if="firstProject"
-                class="flex justify-center md:flex md:flex-row md:justify-start items-start pt-12 w-full"
-              >
-                <div class="flex flex-col items-start pl-12 md:w-1/2">
-                  <img
-                    class="w-[600px] h-[550px] object-cover rounded-lg"
-                    :src="firstProject.image"
-                    :alt="firstProject.title"
-                    v-if="firstProject.image"
-                  />
-                  <p v-else>No image available</p>
-                </div>
+              <div class="flex flex-col items-start pl-12 md:w-1/2">
+                <img
+                  class="w-[600px] h-[550px] object-cover rounded-lg"
+                  :src="firstProject.image"
+                  :alt="firstProject.title"
+                  v-if="firstProject.image"
+                />
+                <p v-else>No image available</p>
+              </div>
 
-                <div class="flex flex-col pl-4 md:pl-12 justify-start md:w-1/2">
-                  <div class="font-bold text-3xl mb-4">Project Title</div>
-                  <div class="text-lg w-full">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Vel, quisquam. Dignissimos maiores voluptatem laudantium
-                    ducimus, quo blanditiis hic aut ipsa magni beatae similique
-                    saepe, neque laboriosam ex exercitationem possimus
-                    temporibus?
-                  </div>
+              <div class="flex flex-col pl-4 md:pl-12 justify-start md:w-1/2">
+                <div class="font-bold text-3xl mb-4 font-arvo text-white dark:text-black">Project Title</div>
+                <div class="text-lg w-full font-chakra text-white dark:text-black">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Vel, quisquam. Dignissimos maiores voluptatem laudantium
+                  ducimus, quo blanditiis hic aut ipsa magni beatae similique
+                  saepe, neque laboriosam ex exercitationem possimus
+                  temporibus?
                 </div>
               </div>
-            </section>
+            </div>
+          </section>
 
-            <section
-              id="section4"
-              class="panel flex-shrink-0 flex-grow-0 w-screen min-h-screen pt-24 pb-14 transition-colors duration-300 bg-zinc-800 dark:bg-white text-white"
+          <section
+            id="section4"
+            class="panel flex-shrink-0 flex-grow-0 w-screen min-h-screen pt-24 pb-14 transition-colors duration-300 bg-zinc-800 dark:bg-white text-white dark:text-black"
+          >
+            <div
+              v-if="thirdProject"
+              class="flex justify-center md:flex md:flex-row md:justify-start items-start pt-12 w-full"
             >
               <div
-                v-if="thirdProject"
-                class="flex justify-center md:flex md:flex-row md:justify-start items-start pt-12 w-full"
+                class="flex flex-col items-start pl-12 col-span-2 md:w-1/2"
               >
-                <div
-                  class="flex flex-col items-start pl-12 col-span-2 md:w-1/2"
-                >
-                  <img
-                    class="w-[600px] h-[550px] object-cover rounded-lg"
-                    :src="thirdProject.image"
-                    :alt="thirdProject.title"
-                    v-if="thirdProject.image"
-                  />
-                  <p v-else>No image available</p>
-                </div>
+                <img
+                  class="w-[600px] h-[550px] object-cover rounded-lg"
+                  :src="thirdProject.image"
+                  :alt="thirdProject.title"
+                  v-if="thirdProject.image"
+                />
+                <p v-else>No image available</p>
+              </div>
 
-                <div class="flex flex-col pl-4 md:pl-12 justify-start md:w-1/2">
-                  <div class="font-bold text-3xl mb-4">hallo</div>
-                  <div class="text-lg w-full">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Atque similique rerum tempora nesciunt voluptates voluptate
-                    iure impedit, sint velit officia explicabo quod laudantium
-                    ad cupiditate, eaque omnis dolore quam quae.
-                  </div>
+              <div class="flex flex-col pl-4 md:pl-12 justify-start md:w-1/2">
+                <div class="font-bold text-3xl mb-4 font-arvo text-white dark:text-black">hallo</div>
+                <div class="text-lg w-full font-chakra text-white dark:text-black">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Atque similique rerum tempora nesciunt voluptates voluptate
+                  iure impedit, sint velit officia explicabo quod laudantium
+                  ad cupiditate, eaque omnis dolore quam quae.
                 </div>
               </div>
-            </section>
+            </div>
+          </section>
 
-            <section
-              id="section5"
-              class="panel flex-shrink-0 flex-grow-0 w-screen min-h-screen pt-24 pb-14 transition-colors duration-300 bg-zinc-800 dark:bg-white text-white"
+          <section
+            id="section5"
+            class="panel flex-shrink-0 flex-grow-0 w-screen min-h-screen pt-24 pb-14 transition-colors duration-300 bg-zinc-800 dark:bg-white text-white dark:text-black"
+          >
+            <div
+              v-if="fourthProject"
+              class="flex justify-center md:flex md:flex-row md:justify-start items-start pt-12 w-full"
             >
-              <div
-                v-if="fourthProject"
-                class="flex justify-center md:flex md:flex-row md:justify-start items-start pt-12 w-full"
-              >
-                <div class="flex flex-col items-start pl-12 md:w-1/2">
-                  <img
-                    class="w-[600px] h-[550px] object-cover rounded-lg"
-                    :src="fourthProject.image"
-                    :alt="fourthProject.title"
-                    v-if="fourthProject.image"
-                  />
-                  <p v-else>No image available</p>
-                </div>
+              <div class="flex flex-col items-start pl-12 md:w-1/2">
+                <img
+                  class="w-[600px] h-[550px] object-cover rounded-lg"
+                  :src="fourthProject.image"
+                  :alt="fourthProject.title"
+                  v-if="fourthProject.image"
+                />
+                <p v-else>No image available</p>
+              </div>
 
-                <div class="flex flex-col pl-4 md:pl-12 justify-start md:w-1/2">
-                  <div class="font-bold text-3xl mb-4">Another Title</div>
-                  <div class="text-lg w-full">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quod officia doloribus quis doloremque rem animi ipsam, quas
-                    soluta! Omnis velit nisi eveniet iste nam distinctio at,
-                    repellat esse quod natus.
-                  </div>
+              <div class="flex flex-col pl-4 md:pl-12 justify-start md:w-1/2">
+                <div class="font-bold text-3xl mb-4 font-arvo text-white dark:text-black">Another Title</div>
+                <div class="text-lg w-full font-chakra text-white dark:text-black">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quod officia doloribus quis doloremque rem animi ipsam, quas
+                  soluta! Omnis velit nisi eveniet iste nam distinctio at,
+                  repellat esse quod natus.
                 </div>
               </div>
-            </section>
-          </div>
-        </section>
-      </main>
-    </div>
-    <!-- contact -->
-    <section
-      id="section6"
-      class="min-h-screen w-full pt-24 pb-14 transition-colors duration-300 bg-zinc-800 dark:bg-white text-white"
-    >
-      <div v-if="fourthProject" class="flex justify-center mb-8">
-        <img
-          class="w-[250px] h-[300px] rounded-lg"
-          :src="fourthProject.image"
-          :alt="fourthProject.title"
-          v-if="fourthProject.image"
-        />
-        <p v-else>No image available</p>
-      </div>
-    </section>
+            </div>
+            <NuxtLink
+              to="/projects"
+              class="float-right borer-2 border-white pr-16 text-xl flex items-center text-white dark:text-black hover:bg-gray-700 dark:hover:bg-gray-200 rounded-lg"
+            >
+              More Projects
+              <Icon name="ic:outline-read-more" class="bg-white dark:bg-black pl-4  h-10 w-10" />
+            </NuxtLink>
+          </section>
+        </div>
+      </section>
+    </main>
   </div>
+  <!-- contact -->
+  <section
+    id="section6"
+    class="min-h-screen w-full pt-24 pb-14 transition-colors duration-300 bg-zinc-800 dark:bg-white text-white dark:text-black"
+  >
+    <div class="grid grid-rows-4 grid-cols-3 gap-4">
+      <div class="text-[5rem] font-arvo tracking-tight w-[40%] relative">
+        LET'S
+        <div
+          class="absolute top-1/2 left-full transform -translate-y-1/2 space-y-4 ml-8"
+        >
+          <div
+            class="relative inline-block w-36 ml-[500px] py-4 rounded-full text-white text-center transition-colors border-2 border-white dark:border-black duration-300 hover:bg-gray-700 dark:hover:bg-gray-200 overflow-hidden"
+          >
+            <div class="absolute inset-0 flex items-center animate-marquee">
+              <span class="whitespace-nowrap text-sm text-white dark:text-black"> Number: 06 58767486</span>
+            </div>
+          </div>
+          <div
+            class="relative inline-block w-36 ml-[100px] py-4 rounded-full text-white text-center transition-colors border-2 border-white dark:border-black duration-300 hover:bg-gray-700 dark:hover:bg-gray-200 overflow-hidden mt-4"
+          >
+            <div class="absolute inset-0 flex items-center animate-marquee">
+              <span class="whitespace-nowrap text-sm text-white dark:text-black">Instagram</span>
+            </div>
+          </div>
+          <div
+            class="relative inline-block w-36 ml-[400px] py-4 rounded-full text-white text-center transition-colors border-2 border-white dark:border-black duration-300 hover:bg-gray-700 dark:hover:bg-gray-200 overflow-hidden mt-4"
+          >
+            <div class="absolute inset-0 flex items-center animate-marquee">
+              <span class="whitespace-nowrap text-sm text-white dark:text-black">LinkedIn</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+      <div class="text-[5rem] font-arvo tracking-tighter w-[40%] row-start-3 relative">
+        CONNECT
+        <div
+          class="absolute top-1/2 left-full transform -translate-y-1/2 space-y-4 ml-8"
+        >
+          <div
+            class="relative inline-block w-36 ml-64 py-4 rounded-full text-white text-center transition-colors border-2 border-white dark:border-black duration-300 hover:bg-gray-700 dark:hover:bg-gray-200 overflow-hidden"
+          >
+            <div class="absolute inset-0 flex items-center animate-marquee">
+              <span class="whitespace-nowrap text-sm text-white dark:text-black">genokooijman@gmail.com</span>
+            </div>
+          </div>
+          <div
+            class="relative inline-block w-36 ml-[500px] py-4 rounded-full text-white text-center transition-colors border-2 border-white dark:border-black duration-300 hover:bg-gray-700 dark:hover:bg-gray-200 overflow-hidden mt-4"
+          >
+            <div class="absolute inset-0 flex items-center animate-marquee">
+              <span class="whitespace-nowrap text-sm text-white dark:text-black">GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
+
+<style scoped>
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 5s linear infinite;
+}
+
+.animate-marquee span {
+  letter-spacing: 0.2em;
+  word-spacing: 0.5em;
+}
+</style>
