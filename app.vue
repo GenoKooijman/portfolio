@@ -6,7 +6,7 @@
   <DarkModeToggle />
   <AppHeader />
   <NuxtPage />
-  <AppFooter />
+  <!-- <AppFooter /> -->
 </template>
 
 <script setup>
