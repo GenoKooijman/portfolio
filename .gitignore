@@ -38,3 +38,4 @@ vite.config.ts.timestamp-*
 
 # Miscellaneous
 *.local
+notes.txt
