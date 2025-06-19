@@ -1,10 +1,11 @@
 import HomeHero from "@/components/home/HomeHero";
+import HomeAbout from "@/components/home/HomeAbout";
 
 export default function Home() {
   return (
     <main>
-      <h1>Home Page</h1>
       <HomeHero />
+      <HomeAbout />
     </main>
   );
 }
