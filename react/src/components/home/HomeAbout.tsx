@@ -26,11 +26,11 @@ export default function HomeAbout() {
           y: 0,
           duration: 1.6,
           ease: "power2.out",
-          scrollTrigger: {
+          scrolltrigger: {
             trigger: textRef.current,
             start: "top 80%",
             end: "bottom 60%",
-            toggleActions: "play reverse play reverse",
+            toggleActions: "play none none none",
             scroller: document.body,
           },
         }
@@ -51,7 +51,7 @@ export default function HomeAbout() {
             trigger: textRef.current,
             start: "top 85%",
             end: "bottom 10%",
-            toggleActions: "play reverse play reverse",
+            toggleActions: "play none none none",
             scroller: document.body,
           },
         }
@@ -96,19 +96,19 @@ export default function HomeAbout() {
         >
             <div className="flex gap-4 w-full justify-center md:justify-end">
                 <img
-                src="img/about/Kayak.png"
+                src="img/homeimg/Kayak.png"
                 alt="dummy1"
                 className="rounded-xl shadow-lg w-39 h-28 object-cover"
                 />
                 <img
-                src="img/about/Kayak.png"
+                src="img/homeimg/Kayak.png"
                 alt="dummy2"
                 className="rounded-xl shadow-lg w-39 h-28 object-cover"
                 />
             </div>
           <div className="w-full flex justify-center md:justify-end">
             <img
-              src="img/about/Kayak.png"
+              src="img/homeimg/Kayak.png"
               alt="dummy3"
               className="rounded-xl shadow-lg w-max h-82 object-cover mt-4"
             />
