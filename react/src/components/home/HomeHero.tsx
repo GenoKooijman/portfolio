@@ -25,8 +25,8 @@ export default function HomeHero() {
      ref={textRef}
      className="flex flex-col mx-24 my-48 font-montserrat"
      >
-      <h1 className="text-8xl font-bold">Geno</h1>
-      <h2 className="text-8xl font-bold">Kooijman</h2>
+      <h1 className="text-xl md:text-8xl font-bold">Geno</h1>
+      <h2 className="text-xl md:text-8xl font-bold">Kooijman</h2>
     </section>
   );
 }
