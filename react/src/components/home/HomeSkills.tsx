@@ -21,9 +21,6 @@ const ICON_IMAGES = [
   "bun.png",
   "phpmyadmin.png"
 ];
-
-const GRID_IMAGES = Array.from({ length: 15 }, (_, i) => ICON_IMAGES[i % ICON_IMAGES.length]);
-
 export default function HomeSkills() {
   const blocksRef = useRef<HTMLDivElement[]>([]);
 
@@ -57,9 +54,9 @@ export default function HomeSkills() {
   return (
     <section
       id="skills-grid"
-      className="w-screen h-[120vh] grid grid-cols-5 grid-rows-3 gap-0"
+      className="w-full h-[120vh] grid grid-cols-5 grid-rows-3 gap-0"
     >
-      {GRID_IMAGES.map((img, i) => (
+      {ICON_IMAGES.map((img, i) => (
         <div
           key={i}
           ref={el => {
@@ -70,7 +67,7 @@ export default function HomeSkills() {
           <img
             src={`/img/homeimg/${img}`}
             alt={img.replace('.png', '')}
-            className="w-auto h-[50%] object-cover block"
+            className="w-auto h-[50%] object-cover"
           />
         </div>
       ))}
