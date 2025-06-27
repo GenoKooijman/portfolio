@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { navItems } from "@/data/navItems";
 import { gsap } from "gsap";
 import { useEffect, useRef, useState } from "react";
@@ -11,6 +11,21 @@ export default function Header() {
   const burgerLine2 = useRef<HTMLDivElement>(null);
   const burgerLine3 = useRef<HTMLDivElement>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    target: string
+  ) => {
+    e.preventDefault();
+    const element = document.querySelector(target);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+    setIsMenuOpen(false);
+  };
 
   useEffect(() => {
     if (headerRef.current) {
@@ -49,6 +64,27 @@ export default function Header() {
     });
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    const sectionIds = navItems.map((item) => item.to.replace("#", ""));
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+      if (sections.length === 0) return;
+
+      const observer = new window.IntersectionObserver(
+        (_) => {
+  });
+
+      sections.forEach((section) => observer.observe(section));
+
+      return () => {
+        sections.forEach((section) => observer.unobserve(section));
+      };
+
+
+  }, []);
+
   return (
     <header ref={headerRef} id="main-header">
       <nav>
@@ -77,15 +113,17 @@ export default function Header() {
 
           <ul className="hidden md:flex justify-center gap-12 font-normal w-full">
             {navItems.map((item) => {
-              const isActive = location.pathname === item.to;
               return (
                 <li
-                  className={`text-black text-3xl font-semibold font-montserrat ${
-                    isActive ? "border-b-2 border-black" : ""
-                  }`}
+                  className="text-black text-3xl font-semibold font-montserrat"
                   key={item.to}
                 >
-                  <Link to={item.to}>{item.label}</Link>
+                  <a
+                    href={item.to}
+                    onClick={(e) => handleSmoothScroll(e, item.to)}
+                  >
+                    {item.label}
+                  </a>
                 </li>
               );
             })}
@@ -97,7 +135,7 @@ export default function Header() {
               className="md:hidden absolute top-24 left-0 w-full bg-white flex flex-col items-center gap-6 py-6 shadow-lg z-10"
             >
               {navItems.map((item) => {
-                const isActive = location.pathname === item.to;
+                const isActive = location.hash === item.to;
                 return (
                   <li
                     className={`text-black text-2xl font-semibold font-montserrat ${
@@ -105,9 +143,12 @@ export default function Header() {
                     }`}
                     key={item.to}
                   >
-                    <Link to={item.to} onClick={() => setIsMenuOpen(false)}>
+                    <a
+                      href={item.to}
+                      onClick={(e) => handleSmoothScroll(e, item.to)}
+                    >
                       {item.label}
-                    </Link>
+                    </a>
                   </li>
                 );
               })}

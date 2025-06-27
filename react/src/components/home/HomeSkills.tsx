@@ -34,11 +34,20 @@ export default function HomeSkills() {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
-
-  return (
+   return (
     <section
-      id="skills-grid"
-      className="w-full h-[120vh] grid grid-cols-5 grid-rows-3 gap-0"
+      id="skills"
+      className="
+        w-full
+        min-h-[60vh]
+        grid
+        gap-0
+        grid-cols-2
+        grid-rows-6
+        sm:grid-cols-3 sm:grid-rows-4
+        md:grid-cols-5 md:grid-rows-3
+        md:h-[120vh]
+      "
     >
       {ICON_IMAGES.map((img, i) => (
         <div
@@ -46,12 +55,19 @@ export default function HomeSkills() {
           ref={el => {
             if (el) blocksRef.current[i] = el;
           }}
-          className="flex items-center justify-center w-full h-full bg-white box-border hover:bg-gray-200 transition-colors shadow-lg"
+          className="
+            flex items-center justify-center
+            w-full h-32
+            sm:h-36
+            md:h-full
+            hover:bg-gray-200 transition-colors shadow-lg
+            rounded-lg
+          "
         >
           <img
             src={`/img/homeimg/${img}`}
             alt={img.replace('.png', '')}
-            className="w-auto h-[50%] object-cover"
+            className="w-20 h-16 sm:w-20 sm:h-20 md:w-auto md:h-[50%] md:object-cover"
           />
         </div>
       ))}

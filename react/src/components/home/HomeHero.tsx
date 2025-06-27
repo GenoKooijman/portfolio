@@ -22,11 +22,13 @@ export default function HomeHero() {
 
   return (
     <section
+     id="hero"
      ref={textRef}
-     className="flex flex-col mx-24 my-48 font-montserrat"
+     className="flex flex-col mx-12 my-24 md:mx-24 md:my-48 font-montserrat"
      >
-      <h1 className="text-xl md:text-8xl font-bold">Geno</h1>
-      <h2 className="text-xl md:text-8xl font-bold">Kooijman</h2>
+      <h1 className="text-6xl md:text-8xl font-bold">Geno</h1>
+      <h2 className="text-6xl md:text-8xl font-bold">Kooijman</h2>
+      <p className="text-lg md:text-xl font-bold pt-1">Passionate Web Developer</p>
     </section>
   );
 }

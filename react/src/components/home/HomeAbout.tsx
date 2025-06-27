@@ -64,9 +64,9 @@ export default function HomeAbout() {
     };
   }, []);
 
-
   return (
     <section
+      id="about"
       ref={sectionRef}
       className="mx-auto my-24 max-w-5xl px-6 font-montserrat"
     >
