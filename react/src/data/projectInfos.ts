@@ -1,13 +1,13 @@
-import viteImg from "@/../public/img/homeimg/vite.png";
-import reactImg from "@/../public/img/homeimg/react.png";
-import gsapImg from "@/../public/img/homeimg/gsap.png";
-import svelteImg from "@/../public/img/homeimg/svelte.png";
-import mysqlImg from "@/../public/img/homeimg/mysql.png";
-import phpImg from "@/../public/img/homeimg/php.png";
-import wordpressImg from "@/../public/img/homeimg/wordpress.png";
-import bunImg from "@/../public/img/homeimg/bun.png";
-import typescriptImg from "@/../public/img/homeimg/typescript.png";
-import kayakImg from "@/../public/img/homeimg/Kayak.png";
+import viteImg from "@/assets/vite.png";
+import reactImg from "@/assets/react.png";
+import gsapImg from "@/assets/gsap.png";
+import svelteImg from "@/assets/svelte.png";
+import mysqlImg from "@/assets/mysql.png";
+import phpImg from "@/assets/php.png";
+import wordpressImg from "@/assets/wordpress.png";
+import bunImg from "@/assets/bun.png";
+import typescriptImg from "@/assets/typescript.png";
+import kayakImg from "@/assets/Kayak.png";
 
 export interface ProjectInfo {
   name: string;
