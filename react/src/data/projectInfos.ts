@@ -5,9 +5,9 @@ import svelteImg from "@/assets/svelte.png";
 import mysqlImg from "@/assets/mysql.png";
 import phpImg from "@/assets/php.png";
 import wordpressImg from "@/assets/wordpress.png";
-import bunImg from "@/assets/bun.png";
 import typescriptImg from "@/assets/typescript.png";
 import kayakImg from "@/assets/Kayak.png";
+import tailwindImg from "@/assets/tailwind.png";
 
 export interface ProjectInfo {
   name: string;
@@ -35,7 +35,7 @@ export const projects: ProjectInfo[] = [
   {
     name: "Bureau Webshop",
     desc: "A modern, responsive website demo showcasing clean design, smooth navigation, and dynamic content.",
-    items: [svelteImg, wordpressImg, bunImg],
+    items: [svelteImg, wordpressImg, tailwindImg],
     image: kayakImg,
     link: "https://gsap.com/",
   },

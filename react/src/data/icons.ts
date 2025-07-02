@@ -1,17 +1,17 @@
 export const ICON_IMAGES: string[] = [
-  "bun.png",
-  "git.png",
-  "gsap.png",
-  "mysql.png",
-  "node.png",
-  "npm.png",
-  "php.png",
-  "phpmyadmin.png",
   "react.png",
   "svelte.png",
+  "gsap.png",
   "tailwind.png",
+  "wordpress.png",
   "typescript.png",
+  "php.png",
+  "phpmyadmin.png",
+  "bun.png",
+  "git.png",
+  "mysql.png",
+  "npm.png",
   "vite.png",
   "vue.png",
-  "wordpress.png"
+  "node.png"
 ];
