@@ -38,6 +38,11 @@ export default function HomeSkills() {
     <section
       id="skills"
       className="
+        font-montserrat
+      "
+    >
+      <h1 className="text-8xl font-bold">skills</h1>
+      <div className=" 
         w-full
         min-h-[60vh]
         grid
@@ -46,9 +51,7 @@ export default function HomeSkills() {
         grid-rows-6
         sm:grid-cols-3 sm:grid-rows-4
         md:grid-cols-5 md:grid-rows-3
-        md:h-[120vh]
-      "
-    >
+        md:h-[120vh]">
       {ICON_IMAGES.map((img, i) => (
         <div
           key={i}
@@ -60,7 +63,7 @@ export default function HomeSkills() {
             w-full h-32
             sm:h-36
             md:h-full
-            hover:bg-gray-200 transition-colors shadow-lg
+            hover:bg-white transition-colors hover:shadow-lg
             rounded-lg
           "
         >
@@ -71,6 +74,7 @@ export default function HomeSkills() {
           />
         </div>
       ))}
+      </div>
     </section>
   );
 }
